@@ -64,7 +64,7 @@ public class QuizService
                 }
                 for(Question submittedQuestion :submittedQuiz.getQuestions()){
                     Question questionFromDb = questionDao.getById(submittedQuestion.getId());
-                    if(!Objects.equals(questionFromDb.getRightAnswer(), submittedQuestion.getAnswer()))
+                    if(!Objects.equals(questionFromDb.getRightAnswer().toLowerCase(), submittedQuestion.getAnswer().toLowerCase()))
                     {
                         degree--;
                     }
